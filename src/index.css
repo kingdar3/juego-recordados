@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;  /* Esto elimina el scroll */
+}
+
+.relative {
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    overflow: hidden; /* Evita el desbordamiento en el contenedor */
+}
