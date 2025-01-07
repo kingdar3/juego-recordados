@@ -1,22 +1,29 @@
 export const Card = ({ card, handleCardClick }) => {
+    const placeholderImg = "/img/logo_fondo.png"; // Ruta de la imagen predeterminada
+
     return (
         <div
-            className={`drop-shadow-md flex items-center ${
-                card.flipped ? '[transform:rotateY(10deg)]' : 'bg-white'
-             } justify-center cursor-pointer h-32 w-32 hover:scale-105 rounded-xl transition-all duration-1000 `}
+            className={`drop-shadow-md flex items-center justify-center cursor-pointer 
+                h-16 w-16 2xl:h-24 2xl:w-24 hover:scale-105 rounded-xl transition-all duration-1000`}
             onClick={() => handleCardClick(card.id)}
-            onDragStart={(e) => e.preventDefault()} 
-            style={{ userSelect: "none" }} 
+            onDragStart={(e) => e.preventDefault()}
+            style={{ userSelect: "none" }}
         >
-            <div>
+            {card.flipped ? (
                 <img
-                    src={card.img}
+                    src={card.img} // Imagen específica de la carta cuando está volteada
                     alt={card.alt}
-                     draggable="false"// Deshabilita el arrastre de la imagen
-                    className={`h-32 scale-110 rounded-xl  ${!card.flipped ? '[transform:rotateY(180deg)] [backface-visibility:hidden] transition-all duration-1000' : ''}`}
+                    draggable="false"
+                    className="h-16 w-16 2xl:h-24 2xl:w-24 scale-110 rounded-xl transition-all duration-1000"
                 />
-            </div>
-
+            ) : (
+                <img
+                    src={placeholderImg} // Imagen predeterminada cuando no está volteada
+                    alt="Placeholder"
+                    draggable="false"
+                    className="h-16 w-16 2xl:h-24 2xl:w-24 scale-110 rounded-xl transition-all duration-1000"
+                />
+            )}
         </div>
     );
 };

@@ -49,6 +49,9 @@ export const Board = () => {
     // Temporizador
     useEffect(() => {
         if (gameResult === "victory" || timeLeft === 0) {
+            if (timeLeft === 0 && gameResult !== "victory") {
+                setGameResult("timeOver"); // Actualiza el estado cuando el tiempo se acaba
+            }
             setIsDisabled(true); // Deshabilitar el juego si ya se ganó o se acabó el tiempo
             return;
         }
@@ -123,19 +126,19 @@ export const Board = () => {
                 timeWhenWon={timeWhenWon} // Pasamos el tiempo al modal
                 handleNewGame={handleNewGame} 
             />
-
-            <div className="relative h-screen flex items-center">
-                <div className="mx-auto flex flex-col justify-center items-center p-5">
-                    <h1 className="font-bold text-4xl">Juego de memoria</h1>
+            <div className="relative h-screen flex items-center overflow-hidden">
+                <div className="mx-auto flex flex-col justify-center items-center">
+                <img src="/img/logo.png" alt="Logo" className="max-w-full h-auto" />
+                    <h1 className="font-bold lg:text-4xl md:text-2xl">Juego de memoria</h1>
                     <p className="text-xl">Tiempo restante: {timeLeft}s</p>
-                    <div className="grid grid-cols-4 gap-7 justify-center items-center px-3 py-5 my-3">
+                    <div className="grid grid-cols-4 gap-7 justify-center items-center px-3 lg:py-2 lg:my-3">
                         {
                             cards.map(card => (
                                 <Card card={card} key={card.id} handleCardClick={handleCardClick}></Card>
                             ))
                         }
                     </div>
-                    <button className="bg-black font-semibold text-white rounded-md px-5 py-1 hover:text-black transition-all mb-3" onClick={handleNewGame}>REINICIAR</button>
+                    <button className="bg-black font-semibold text-white rounded-md px-5 my-5 py-1 hover:text-yellow-500 transition-all mb-3" onClick={handleNewGame}>JUGAR DE NUEVO</button>
                 </div>
             </div>
         </>

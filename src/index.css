@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;  /* Esto elimina el scroll */
-}
-
-.relative {
-    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
-    overflow: hidden; /* Evita el desbordamiento en el contenedor */
+body{
+    background-color: #85FFBD;
+background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
 }
