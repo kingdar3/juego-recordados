@@ -1,5 +1,5 @@
 export const Card = ({ card, handleCardClick }) => {
-    const placeholderImg = "/img/logo_fondo.png"; // Ruta de la imagen predeterminada
+    const placeholderImg = "/img/logo2.svg"; // Ruta de la imagen predeterminada
 
     return (
         <div

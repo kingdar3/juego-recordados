@@ -26,25 +26,33 @@ function App() {
       e.preventDefault();
     };
 
+    // Prevenir el zoom en dispositivos móviles (pellizco de los dedos)
+    const preventMobileZoom = (e) => {
+      if (e.touches.length > 1) {
+        e.preventDefault(); // Evitar el zoom con dos dedos
+      }
+    };
+
     // Agregar eventos
     window.addEventListener("wheel", preventZoom, { passive: false });
     window.addEventListener("keydown", preventKeyZoom);
     window.addEventListener("contextmenu", disableRightClick);
+    window.addEventListener("touchmove", preventMobileZoom, { passive: false });
 
     // Limpieza al desmontar el componente
     return () => {
       window.removeEventListener("wheel", preventZoom);
       window.removeEventListener("keydown", preventKeyZoom);
       window.removeEventListener("contextmenu", disableRightClick);
+      window.removeEventListener("touchmove", preventMobileZoom);
     };
   }, []);
 
   return (
     <>
-       <Board />
-     <Sonido></Sonido>
+      <Board />
+      <Sonido></Sonido>
     </>
- 
   );
 }
 
