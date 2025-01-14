@@ -1,42 +1,32 @@
 export const imgs=[
     {
         id: 1,
-        img: "/img/machu-pichu.jpg",
+        img: "/img/suave.png",
         alt: "machu pichu",
     },
     {
         id: 2,
-        img: "/img/piramide.jpg",
+        img: "/img/huggies.png",
         alt: "piramide de giza",
     },
     {
         id: 3,
-        img: "/img/cristo-redentor.jpg",
+        img: "/img/kotex.png",
         alt: "cristo redentor",
     },
     {
         id: 4,
-        img: "/img/coliseo.jpg",
+        img: "/img/scott.png",
         alt: "coliseo",
     },
     {
         id: 5,
-        img: "/img/muralla-china.jpg",
+        img: "/img/plenitud.png",
         alt: "muralla china",
     },
     {
         id: 6,
-        img: "/img/taj-mahal.jpg",
+        img: "/img/kleenex.png",
         alt: "taj mahal",
-    },
-    {
-        id: 7,
-        img: "/img/chichen.jpg",
-        alt: "chichen",
-    },
-    {
-        id: 8,
-        img: "/img/petra.jpg",
-        alt: "petra",
     },
 ]

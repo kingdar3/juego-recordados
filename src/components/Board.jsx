@@ -128,10 +128,10 @@ export const Board = () => {
             />
             <div className="relative h-screen flex items-center overflow-hidden">
                 <div className="mx-auto flex flex-col justify-center items-center">
-                <img src="/img/logo.png" alt="Logo" className="max-w-full h-auto  mb-3" />
-                    <h1 className="font-bold lg:text-4xl md:text-2xl mb-3">Juego de memoria</h1>
-                    <p className="text-xl mb-6">Tiempo restante: {timeLeft}s</p>
-                    <div className="grid grid-cols-4 gap-7 justify-center items-center px-3 lg:py-2 lg:my-3">
+                <img src="/img/logo.svg" alt="Logo" className="img-fluid"/>
+                    <h1 className="font-bold lg:text-4xl md:text-2xl mb-2">Juego de memoria</h1>
+                    <p className="text-lg mb-4">Tiempo restante: {timeLeft}s</p>
+                    <div className="grid grid-cols-3 gap-7 justify-center items-center px-3 lg:py-2 lg:my-3">
                         {
                             cards.map(card => (
                                 <Card card={card} key={card.id} handleCardClick={handleCardClick}></Card>

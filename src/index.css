@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #85FFBD;
-background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
+body {
+    background: rgb(154, 222, 109);
+    background: linear-gradient(to bottom, rgba(154, 222, 109, 1) 0%, rgba(105, 187, 139, 1) 50%, rgba(77, 91, 91, 1) 100%);
 }
